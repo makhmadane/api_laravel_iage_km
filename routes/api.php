@@ -20,9 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('products', [productController::class, 'index']); // Get all products
+/*Route::get('products', [productController::class, 'index']); // Get all products
 Route::post('products', [productController::class, 'store']); // Add a new product
 Route::get('products/{id}', [productController::class, 'show']); // Get a single product
 Route::put('products/{id}', [productController::class, 'update']); // Update a product
-Route::delete('products/{id}', [productController::class, 'destroy']); // Delete a product
+Route::delete('products/{id}', [productController::class, 'destroy']); // Delete a product*/
+
+Route::apiResource("products",productController::class);
 
